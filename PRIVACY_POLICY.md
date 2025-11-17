@@ -1,9 +1,10 @@
 # Privacy Policy for Sudoku by Perfeasy
 
-**Last Updated:** January 2025  
-**Effective Date:** January 2025  
-**Developer:** Perfeasy  
-**Contact:** info@perfeasy.com
+**Last Updated:** November 2025  
+**Effective Date:** November 2025  
+**Developer:** Perfeasy Enterprises Pvt. Ltd.  
+**Contact:** jitin.chadha@perfeasy.com  
+**Company Registration:** CIN U72900DL2019PTC350468 (India)
 
 ---
 
@@ -19,37 +20,44 @@ By downloading, installing, and using our App, you agree to the collection and u
 
 ### 2.1 Information You Provide
 
-- **Game Progress:** Puzzle completion data, scores, and game statistics
-- **Settings:** Your preferences such as difficulty level, theme selection, and sound settings
-- **Optional Information:** Any feedback or support requests you submit
+- **Game Progress:** Puzzle completion data, scores, and game statistics (stored locally on your device)
+- **Settings:** Your preferences such as difficulty level, theme selection, and sound settings (stored locally on your device)
+- **Optional Information:** Any feedback or support requests you submit via email
+
+**Important:** We do NOT collect personal information such as your name, email address, phone number, or physical address unless you voluntarily provide it when contacting us for support.
 
 ### 2.2 Automatically Collected Information
 
-#### Device Information
+#### Device Information (via Google AdMob)
+- Device identifiers (Advertising ID/AAID)
 - Device type and model
 - Operating system version
-- Device identifiers (such as advertising ID)
-- Screen resolution and display settings
+- Network information (IP address for ad delivery)
 
-#### Usage Information
-- App launch times and frequency
-- Feature usage (which puzzles you play, how long you play)
-- Game performance metrics
-- Crash and error reports
-
-#### Advertising Data
+#### Advertising Data (via Google AdMob)
 - Google Mobile Ads (AdMob) may collect:
-  - Advertising identifiers
+  - Advertising identifiers (AAID)
   - IP address (for ad delivery)
   - Device information (for ad targeting)
   - Interaction with advertisements (clicks, views, conversions)
+  - App performance metrics related to ad delivery
 
-### 2.3 Third-Party Analytics
+**Note:** This data is collected and processed by Google AdMob, not directly by our app. See Section 4.1 for more details.
 
-We use Google Mobile Ads SDK which may collect:
-- **Google Analytics:** App usage statistics and user engagement metrics
-- **Google AdMob:** Advertising-related data for ad personalization and measurement
-- **Crashlytics (Firebase):** Crash reports and device information for debugging
+### 2.3 Information We Do NOT Collect
+
+We do NOT collect:
+- Personal information (name, email, phone, address) - unless you contact us
+- Location data (GPS, precise or approximate)
+- Messages or communications
+- Photos or videos
+- Audio files
+- Calendar information
+- Contacts
+- Financial information
+- Health or fitness data
+- Web browsing history
+- Files or documents from your device
 
 ---
 
@@ -57,12 +65,15 @@ We use Google Mobile Ads SDK which may collect:
 
 We use the collected information to:
 
-- **Provide and Maintain the App:** Deliver game content, save your progress, and maintain app functionality
-- **Improve the App:** Analyze usage patterns to enhance features and user experience
-- **Personalize Experience:** Customize puzzle difficulty and content based on your preferences
-- **Display Advertising:** Show relevant advertisements through Google AdMob
-- **Technical Support:** Diagnose and fix bugs, crashes, and performance issues
-- **Legal Compliance:** Comply with applicable laws and regulations
+- **Provide and Maintain the App:** Deliver game content, save your progress locally, and maintain app functionality
+- **Display Advertising:** Show relevant advertisements through Google AdMob to support the free app
+- **Improve the App:** Analyze basic usage patterns (locally) to enhance features and user experience
+- **Technical Support:** Respond to your support requests if you contact us
+
+**Local Data Storage:**
+- Your game progress and settings are stored **locally on your device only** using SharedPreferences
+- This data is **NOT transmitted to our servers** (we don't have backend servers)
+- You can clear this data anytime by uninstalling the app or clearing app data from device settings
 
 ---
 
@@ -70,33 +81,45 @@ We use the collected information to:
 
 ### 4.1 Google Mobile Ads (AdMob)
 
-Our App uses Google Mobile Ads (AdMob) to display advertisements. AdMob may collect:
-- **Device Information:** Advertising ID, device model, OS version
-- **Network Information:** IP address, mobile carrier, connection type
-- **Location Data:** Approximate location (country/region level) for ad targeting
-- **App Usage:** Which apps you use, interactions with ads
+Our App uses Google Mobile Ads (AdMob) to display advertisements. AdMob is operated by Google LLC.
 
-**Google's Privacy Policy:** https://policies.google.com/privacy
+**What AdMob Collects:**
+- **Device Information:** Advertising ID (AAID), device model, OS version
+- **Network Information:** IP address, mobile carrier, connection type (for ad delivery)
+- **Location Data:** Approximate location (country/region level only) for ad targeting
+- **App Usage:** Interactions with advertisements (impressions, clicks, conversions)
+- **Performance Data:** Basic diagnostics related to ad delivery
 
-### 4.2 Google Analytics for Firebase
+**How AdMob Uses This Data:**
+- Delivering relevant advertisements
+- Measuring ad performance
+- Preventing fraud
+- Personalizing ads (if you have ad personalization enabled in Google settings)
 
-We use Google Analytics to understand how users interact with our App:
-- App usage statistics
-- User engagement metrics
-- Feature adoption rates
-- Retention data
+**Your Control:**
+- You can opt out of personalized advertising in your device settings:
+  - **Android:** Settings > Google > Ads > Reset advertising ID / Opt out of Ads Personalization
+  - You can also reset your Advertising ID anytime
 
-**Google Analytics Privacy Policy:** https://policies.google.com/privacy
+**Google's Privacy Policy:** https://policies.google.com/privacy  
+**Google Ads Privacy:** https://policies.google.com/technologies/ads
 
-### 4.3 Firebase Services
+### 4.2 Local Storage Services
 
-We use Firebase for backend services:
-- **Firebase Analytics:** User behavior analytics
-- **Firebase Crashlytics:** Crash reporting and diagnostics
-- **Firebase Authentication:** Optional user authentication (if enabled)
-- **Cloud Firestore:** Database for storing game progress (if enabled)
+**SharedPreferences:**
+- We use Flutter's `shared_preferences` package to store your game settings and preferences locally on your device
+- This data is stored on your device only and is NOT transmitted anywhere
+- Data is encrypted at rest by the Android/iOS operating system
 
-**Firebase Privacy Policy:** https://firebase.google.com/support/privacy
+**Path Provider:**
+- We use `path_provider` to access app-specific directories for local file storage
+- We do NOT access your personal files, photos, or documents
+- We only use app-specific directories for storing game data
+
+**WebView:**
+- We use `webview_flutter` to display web content within the app (such as this privacy policy)
+- We do NOT track your browsing history or collect data from web pages
+- Any external websites opened in WebView follow their own privacy policies
 
 ---
 
@@ -104,33 +127,37 @@ We use Firebase for backend services:
 
 ### 5.1 Local Storage
 
-- Your game progress and settings are stored locally on your device using SharedPreferences
-- All local data is encrypted and stored securely
+- Your game progress and settings are stored **locally on your device only** using SharedPreferences
+- All local data is encrypted at rest by the Android/iOS operating system
 - You can clear app data at any time from your device settings
+- **We do NOT have backend servers** - all data stays on your device
 
-### 5.2 Cloud Storage (Optional)
+### 5.2 Data Transmission
 
-If you enable cloud sync (if implemented):
-- Your data is stored securely in Google Firebase servers
-- Data is encrypted in transit using HTTPS/TLS
-- Data is encrypted at rest
+- Data transmitted to Google AdMob is encrypted in transit using HTTPS/TLS
+- We do NOT transmit your personal data to any servers
+- Local game data is NOT synced to any cloud service
 
 ### 5.3 Security Measures
 
-We implement appropriate technical and organizational measures to protect your data:
-- Encryption of data in transit and at rest
-- Secure authentication protocols
-- Regular security audits
-- Access controls and permissions
+We implement appropriate technical measures to protect your data:
+- Encryption of data in transit (HTTPS for AdMob communications)
+- Operating system-level encryption for local data storage
+- No backend servers means no risk of server-side data breaches
+- Regular app updates to maintain security
 
 ---
 
 ## 6. Data Retention
 
 - **Local Data:** Stored on your device until you uninstall the App or clear app data
-- **Analytics Data:** Retained by Google Analytics according to Google's data retention policies (typically up to 14 months)
-- **Advertising Data:** Retained by Google AdMob according to Google's privacy policies
-- **Crash Reports:** Retained for debugging purposes and deleted within 90 days
+- **Advertising Data:** Retained by Google AdMob according to Google's privacy policies (typically up to 14 months)
+- **Support Requests:** If you contact us via email, we retain your email correspondence for support purposes only
+
+**Data Deletion:**
+- **Local Data:** Delete by uninstalling the app or clearing app data from device settings
+- **AdMob Data:** Managed by Google - you can reset your Advertising ID or opt out of personalized ads
+- **Support Emails:** Contact us at jitin.chadha@perfeasy.com to request deletion of email correspondence
 
 ---
 
@@ -139,11 +166,11 @@ We implement appropriate technical and organizational measures to protect your d
 ### 7.1 Access and Control
 
 You have the right to:
-- Access your personal data
-- Request deletion of your data
-- Opt out of data collection (where applicable)
-- Disable advertising personalization
-- Reset your advertising ID
+- Access your local game data (stored on your device)
+- Request deletion of your data (uninstall app or clear app data)
+- Opt out of personalized advertising (device settings)
+- Reset your advertising ID (device settings)
+- Contact us for privacy inquiries
 
 ### 7.2 Advertising Controls
 
@@ -151,17 +178,15 @@ To opt out of personalized advertising:
 - **Android:** Settings > Google > Ads > Reset advertising ID / Opt out of Ads Personalization
 - **iOS:** Settings > Privacy & Security > Apple Advertising > Personalize Ads (toggle off)
 
-### 7.3 Location Controls
+### 7.3 Data Deletion
 
-To disable location-based advertising:
-- **Android:** Settings > Location > Use Location (toggle off)
-- **iOS:** Settings > Privacy & Security > Location Services > System Services > Location-Based Ads (toggle off)
+To delete all local data:
+- **Uninstall the App** from your device (removes all local game data)
+- Or go to: Settings > Apps > Sudoku by Perfeasy > Storage > Clear Data
 
-### 7.4 Data Deletion
-
-To delete all data:
-- Uninstall the App from your device (local data)
-- For cloud data (if applicable), contact us at: info@perfeasy.com
+To request deletion of support email correspondence:
+- Contact us at: jitin.chadha@perfeasy.com
+- We will respond within 30 days
 
 ---
 
@@ -181,22 +206,19 @@ If we become aware that we have collected personal information from a child unde
 ### 8.3 Parental Controls
 
 Parents or guardians can:
-- Review the data collected by requesting a report
+- Review the data collected by requesting a report (contact us)
 - Request deletion of their child's data
-- Contact us at: info@perfeasy.com
-
-**Note:** If your App targets or is accessible to children under 13, you MUST add the Families Self-Certified COPPA Safe Harbor Program seal and implement additional privacy measures. Google Ads has specific requirements for child-directed apps.
+- Contact us at: jitin.chadha@perfeasy.com
 
 ---
 
 ## 9. Data Sharing and Disclosure
 
-We may share your information with:
+### 9.1 Third-Party Sharing
 
-### 9.1 Service Providers
-- **Google LLC:** Analytics, advertising, and cloud services
-- **Firebase/Google Cloud:** Backend infrastructure
-- **Ad Network Partners:** For displaying advertisements
+We share data with:
+- **Google LLC (AdMob):** For advertising services only (device identifiers, ad interactions)
+- **No other third parties:** We do not sell, rent, or share your data with anyone else
 
 ### 9.2 Legal Requirements
 
@@ -211,10 +233,13 @@ We may disclose your information if required by law:
 ## 10. International Data Transfers
 
 Your information may be transferred to and processed in:
-- United States (Google servers)
-- Other countries where our service providers operate
+- **United States:** Google AdMob servers (for advertising services)
+- **Other countries:** Where Google operates data centers
 
-We ensure appropriate safeguards are in place to protect your data during international transfers.
+We ensure appropriate safeguards are in place:
+- Google AdMob uses standard contractual clauses and other legal mechanisms
+- Data is encrypted in transit using HTTPS/TLS
+- Google complies with applicable data protection laws
 
 ---
 
@@ -223,59 +248,60 @@ We ensure appropriate safeguards are in place to protect your data during intern
 ### 11.1 European Users (GDPR)
 
 If you are located in the European Economic Area (EEA), you have the right to:
-- Access your personal data
-- Rectify inaccurate data
-- Request deletion of your data
-- Object to processing of your data
-- Request restriction of processing
-- Data portability
-- Withdraw consent
+- **Access:** Request a copy of your personal data
+- **Rectification:** Correct inaccurate data
+- **Erasure:** Request deletion of your data
+- **Object:** Object to processing of your data
+- **Restriction:** Request restriction of processing
+- **Portability:** Request data portability
+- **Withdraw Consent:** Withdraw consent at any time
 
 ### 11.2 California Users (CCPA/CPRA)
 
 California residents have the right to:
-- Know what personal information is collected
-- Know if personal information is disclosed
-- Opt out of the sale of personal information (we do not sell personal information)
-- Delete personal information
-- Non-discrimination for exercising rights
+- **Know:** What personal information is collected
+- **Disclosure:** Know if personal information is disclosed
+- **Opt Out:** Opt out of the sale of personal information (we do NOT sell personal information)
+- **Delete:** Request deletion of personal information
+- **Non-Discrimination:** Not be discriminated against for exercising rights
 
 ### 11.3 Exercising Your Rights
 
-To exercise your rights, contact us at: info@perfeasy.com
-Response time: Within 30 days (or as required by applicable law)
+To exercise your rights, contact us at: **jitin.chadha@perfeasy.com**
+
+**Response Time:** Within 30 days (or as required by applicable law)
 
 ---
 
 ## 12. Cookies and Tracking Technologies
 
 Our App uses:
-- **Advertising IDs:** For personalized ads (you can reset or opt out)
-- **Analytics IDs:** For measuring app performance
-- **Session Tokens:** For maintaining your app session
-- **Persistent Identifiers:** For saving your game progress
+- **Advertising IDs (AAID):** For personalized ads (you can reset or opt out)
+- **No cookies:** We do not use web cookies
+- **No tracking pixels:** We do not use tracking pixels
+- **Local Identifiers:** For saving your game progress (stored locally only)
 
 ---
 
 ## 13. Changes to This Privacy Policy
 
 We may update our Privacy Policy from time to time. We will:
-- Notify you of changes by updating the "Last Updated" date
-- Post the new Privacy Policy in the App
-- Require your acceptance of changes (if applicable)
+- Notify you of significant changes by updating the "Last Updated" date
+- Post the new Privacy Policy in the App (if possible)
+- Make the updated policy available on our website/GitHub Pages
 
-Continued use of the App after changes constitutes acceptance of the updated policy.
+**Continued use of the App after changes constitutes acceptance of the updated policy.**
 
 ---
 
 ## 14. Consent Withdrawal
 
 You may withdraw your consent at any time by:
-1. Disabling data collection in your device settings
-2. Uninstalling the App
-3. Contacting us at: info@perfeasy.com
+1. Disabling data collection in your device settings (for advertising)
+2. Uninstalling the App (removes all local data)
+3. Contacting us at: jitin.chadha@perfeasy.com
 
-Withdrawal of consent will not affect the lawfulness of processing before withdrawal.
+**Note:** Withdrawal of consent will not affect the lawfulness of processing before withdrawal.
 
 ---
 
@@ -283,10 +309,12 @@ Withdrawal of consent will not affect the lawfulness of processing before withdr
 
 If you have questions about this Privacy Policy or our data practices, please contact us:
 
-**Email:** info@perfeasy.com  
-**Developer Name:** Perfeasy  
+**Email:** jitin.chadha@perfeasy.com  
+**Developer Name:** Perfeasy Enterprises Pvt. Ltd.  
+**Company Registration:** CIN U72900DL2019PTC350468  
 **App Name:** Sudoku by Perfeasy  
-**Package Name:** com.storydoku.app (Android) / com.storydoku.app (iOS)
+**Package Name:** com.storydoku.app  
+**Address:** Delhi, India
 
 ---
 
@@ -294,12 +322,40 @@ If you have questions about this Privacy Policy or our data practices, please co
 
 - **Google Privacy Policy:** https://policies.google.com/privacy
 - **Google Ads Privacy:** https://policies.google.com/technologies/ads
-- **Firebase Privacy:** https://firebase.google.com/support/privacy
+- **Google Play Data Safety:** https://support.google.com/googleplay/android-developer/answer/10787469
 - **COPPA Information:** https://www.ftc.gov/tips-advice/business-center/guidance/childrens-online-privacy-protection-rule-six-step-compliance
 
 ---
 
-**Effective Date:** January 2025  
-**Version:** 1.0
+## 17. Data Safety Summary (Google Play)
+
+For Google Play's Data Safety section, here's a summary:
+
+**Data Collected:**
+- Device or other IDs (via AdMob) - for advertising
+- App interactions with ads (via AdMob) - for ad measurement
+- App info & performance (via AdMob) - for ad delivery
+
+**Data NOT Collected:**
+- Personal information, location, messages, photos, audio, files, calendar, contacts, financial info, health info
+
+**Purposes:**
+- Advertising/Marketing (AdMob)
+- App functionality (local storage)
+
+**Data Sharing:**
+- Shared with Google AdMob only (for advertising services)
+
+**Security:**
+- Data encrypted in transit (HTTPS)
+- Users can request data deletion (contact email provided)
+
+**For detailed Data Safety information, see:** [Google Play Store listing]
+
+---
+
+**Effective Date:** November 2025  
+**Version:** 2.0  
+**Last Updated:** November 2025
 
 By using Sudoku by Perfeasy, you acknowledge that you have read and understood this Privacy Policy and agree to the collection and use of information as described herein.
